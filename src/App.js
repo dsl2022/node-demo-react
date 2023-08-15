@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
+
+async function getData(){
+  let config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: 'localhost:5000/all-pokemons',    
+  };
+  const result = await axios.request(config)
+  return result  
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
     </div>
   );
 }
